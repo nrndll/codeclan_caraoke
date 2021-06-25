@@ -7,7 +7,7 @@ class TestBar(unittest.TestCase):
 
     def setUp(self):
         self.bar = Bar("Karaokekan")
-        self.guest = Guest("Majima", 55.00)
+        self.guest = Guest("Majima", 55.00, "Rouge of Love")
         self.room = Room("Nagasugai", 15, 10.00)
 
     def test_bar_has_name(self):

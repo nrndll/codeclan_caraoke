@@ -4,9 +4,22 @@ class Bar:
         self.name = name
         self.total_cash = 0
 
-    # def take_cash_from_guest(self, amount, guest):
-    #     guest.wallet -= amount
-    #     self.total_cash += amount
+    def check_in_guest(self, room, guest):
+        if room.space_for_guest():
+            if guest.can_afford_entry_fee(room):
+                room.guests.append(guest)
+                self.add_to_bar_tab(room, guest)
+            else:
+                return "Not enough money."
+        else: 
+            return "No space available, try another room."
 
-    # def add_to_bar_tab(self, guest, amount):
-    #     guest.bar_tab += amount
+    def check_out_guest(self, room, guest):
+        room.guests.remove(guest)
+
+    def add_to_bar_tab(self, room, guest):
+        guest.bar_tab += room.entry_fee
+
+    # def charge_guest_bar_tab(self, guest):
+    #     guest.wallet -= guest.bar_tab
+    #     self.total_cash += guest.bar_tab

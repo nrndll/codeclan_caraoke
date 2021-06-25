@@ -24,3 +24,13 @@ class TestBar(unittest.TestCase):
     # def test_can_add_to_bar_tab(self):
     #     self.bar.add_to_bar_tab(self.guest, self.room.entry_fee)
     #     self.assertEqual(10.00, self.guest.bar_tab)
+
+    def test_can_check_in_guest(self):
+        self.bar.check_in_guest(self.room, self.guest)
+        self.assertEqual(1, len(self.room.guests))
+        self.assertEqual(10.00, self.guest.bar_tab)
+
+    def test_can_check_out_guest(self):
+        self.bar.check_in_guest(self.room, self.guest)
+        self.bar.check_out_guest(self.room, self.guest)
+        self.assertEqual(0, len(self.room.guests))

@@ -21,6 +21,6 @@ class TestBar(unittest.TestCase):
     #     self.assertEqual(45.00, self.guest.wallet)
     #     self.assertEqual(10.00, self.bar.total_cash)
 
-    def test_can_add_to_bar_tab(self):
-        self.bar.add_to_bar_tab(self.guest, self.room.entry_fee)
-        self.assertEqual(10.00, self.guest.bar_tab)
+    # def test_can_add_to_bar_tab(self):
+    #     self.bar.add_to_bar_tab(self.guest, self.room.entry_fee)
+    #     self.assertEqual(10.00, self.guest.bar_tab)

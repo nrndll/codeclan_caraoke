@@ -8,5 +8,5 @@ class Bar:
     #     guest.wallet -= amount
     #     self.total_cash += amount
 
-    def add_to_bar_tab(self, guest, amount):
-        guest.bar_tab += amount
+    # def add_to_bar_tab(self, guest, amount):
+    #     guest.bar_tab += amount

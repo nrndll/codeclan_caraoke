@@ -21,6 +21,7 @@ class TestRoom(unittest.TestCase):
     def test_can_check_in_guest(self):
         self.room.check_in_guest(self.guest)
         self.assertEqual(1, len(self.room.guests))
+        self.assertEqual(25.00, self.guest.bar_tab)
 
     def test_can_check_out_guest(self):
         self.room.check_in_guest(self.guest)
@@ -39,11 +40,11 @@ class TestRoom(unittest.TestCase):
     def test_room_has_maximum_occupancy(self):
         self.assertEqual(10, self.room.maximum_occupants)
 
-    def test_is_there_space_for_guest_True(self):
+    def test_is_there_space_for_guest__True(self):
         self.room.space_for_guest()
         self.assertEqual(True, self.room.space_for_guest())
 
-    def test_is_there_space_for_guest_False(self):
+    def test_is_there_space_for_guest__False(self):
         self.room.maximum_occupants = 1
         self.room.check_in_guest(self.guest)
         self.room.space_for_guest()
@@ -53,6 +54,7 @@ class TestRoom(unittest.TestCase):
         self.room.maximum_occupants = 1
         self.room.check_in_guest(self.guest)
         self.assertEqual("No space available, try another room.", self.room.check_in_guest(self.guest))
+        self.assertEqual(1, len(self.room.guests))
 
     def test_room_has_entry_fee(self):
         self.assertEqual(25.00, self.room.entry_fee)
@@ -60,3 +62,9 @@ class TestRoom(unittest.TestCase):
     def test_check_in_guest_cannot_afford(self):
         self.guest.wallet = 5.00
         self.assertEqual("Not enough money.", self.room.check_in_guest(self.guest))
+        self.assertEqual(0, len(self.room.guests))
+        self.assertEqual(0, self.guest.bar_tab)
+
+    # def test_can_add_to_bar_tab(self):
+    #     self.room.add_to_bar_tab(self.guest, self.room.entry_fee)
+    #     self.assertEqual(25.00, self.guest.bar_tab)

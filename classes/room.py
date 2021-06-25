@@ -12,6 +12,7 @@ class Room:
         if self.space_for_guest():
             if guest.can_afford_entry_fee(self):
                 self.guests.append(guest)
+                self.add_to_bar_tab(guest, self.entry_fee)
             else:
                 return "Not enough money."
         else: 
@@ -31,3 +32,6 @@ class Room:
             return True
         else:
             return False
+
+    def add_to_bar_tab(self, guest, amount):
+        guest.bar_tab += amount

@@ -1,11 +1,12 @@
 import pdb
 
 class Room:
-    def __init__(self, name):
+    def __init__(self, name, maximum_occupants, entry_fee):
         self.name = name
         self.guests = []
         self.songs = []
-        self.maximum_occupants = 10
+        self.maximum_occupants = maximum_occupants
+        self.entry_fee = entry_fee
 
     def check_in_guest(self, guest):
         if self.space_for_guest():

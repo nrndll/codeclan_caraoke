@@ -21,6 +21,6 @@ class TestGuest(unittest.TestCase):
         self.room = Room("Ryukyu", 25, 990.00)
         self.assertEqual(False, self.guest.can_afford_entry_fee(self.room))
 
-    # def test_guest_pay_entry_fee(self):
-    #     self.guest.pay_entry_fee(self.room)
-    #     self.assertEqual(60.00, self.guest.wallet)
+    def test_guest_pay_entry_fee(self):
+        self.guest.pay_entry_fee(self.room)
+        self.assertEqual(60.00, self.guest.wallet)

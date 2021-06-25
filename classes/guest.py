@@ -10,5 +10,6 @@ class Guest:
         else:
             return False
 
-    # def pay_entry_fee(self, room):
-    #     if self.can_afford_entry_fee(room):
+    def pay_entry_fee(self, room):
+        if self.can_afford_entry_fee(room):
+            self.wallet -= room.entry_fee

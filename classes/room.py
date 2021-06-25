@@ -12,3 +12,6 @@ class Room:
 
     def add_song(self, song):
         self.songs.append(song)
+
+    def remove_song(self, song):
+        self.songs.remove(song)

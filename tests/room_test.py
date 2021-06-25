@@ -30,3 +30,8 @@ class TestRoom(unittest.TestCase):
     def test_add_song(self):
         self.room.add_song(self.song)
         self.assertEqual(1, len(self.room.songs))
+
+    def test_remove_song(self):
+        self.room.add_song(self.song)
+        self.room.remove_song(self.song)
+        self.assertEqual(0, len(self.room.songs))

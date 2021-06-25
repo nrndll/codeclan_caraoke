@@ -10,6 +10,12 @@ class TestRoom(unittest.TestCase):
     def test_room_has_name(self):
         self.assertEqual("Kamurocho", self.room.name)
 
+    def test_room_has_guests(self):
+        self.assertEqual(0, len(self.room.guests))
+
+    def test_room_has_songs(self):
+        self.assertEqual(0, len(self.room.songs))
+
     def test_can_check_in_guest(self):
         self.room.check_in_guest(self.guest)
         self.assertEqual(1, len(self.room.guests))

@@ -6,7 +6,7 @@ from classes.song import *
 class TestRoom(unittest.TestCase):
     def setUp(self):
         self.room = Room("Kamurocho")
-        self.guest = Guest("Daigo")
+        self.guest = Guest("Daigo", 85.00)
         self.song = Song("Rouge of Love")
 
     def test_room_has_name(self):

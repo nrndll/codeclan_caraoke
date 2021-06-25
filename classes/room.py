@@ -10,7 +10,10 @@ class Room:
 
     def check_in_guest(self, guest):
         if self.space_for_guest():
-            self.guests.append(guest)
+            if guest.can_afford_entry_fee(self):
+                self.guests.append(guest)
+            else:
+                return "Not enough money."
         else: 
             return "No space available, try another room."
 

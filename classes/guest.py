@@ -12,9 +12,9 @@ class Guest:
         else:
             return False
 
-    def pay_entry_fee(self, room, bar):
-        if self.can_afford_entry_fee(room):
-            bar.take_cash_from_guest(room.entry_fee, self)
+    # def pay_entry_fee(self, room, bar):
+    #     if self.can_afford_entry_fee(room):
+    #         bar.take_cash_from_guest(room.entry_fee, self)
 
     def favourite_song_cheer(self, room):
         for song in room.songs:

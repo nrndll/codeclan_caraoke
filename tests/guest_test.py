@@ -23,10 +23,10 @@ class TestGuest(unittest.TestCase):
         self.room = Room("Ryukyu", 25, 990.00)
         self.assertEqual(False, self.guest.can_afford_entry_fee(self.room))
 
-    def test_guest_pay_entry_fee(self):
-        self.guest.pay_entry_fee(self.room, self.bar)
-        self.assertEqual(60.00, self.guest.wallet)
-        self.assertEqual(15.00, self.bar.total_cash)
+    # def test_guest_pay_entry_fee(self):
+    #     self.guest.pay_entry_fee(self.room, self.bar)
+    #     self.assertEqual(60.00, self.guest.wallet)
+    #     self.assertEqual(15.00, self.bar.total_cash)
 
     def test_room_does_have_favourite_song(self):
         self.room.add_song("Bakamitai")

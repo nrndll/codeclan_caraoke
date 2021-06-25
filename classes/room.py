@@ -18,7 +18,7 @@ class Room:
         self.songs.remove(song)
 
     def space_for_guest(self):
-        if len(self.guests) < 10:
+        if len(self.guests) < self.maximum_occupants:
             return True
         else:
             return False

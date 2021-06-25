@@ -39,6 +39,12 @@ class TestRoom(unittest.TestCase):
     def test_room_has_maximum_occupancy(self):
         self.assertEqual(10, self.room.maximum_occupants)
 
-    def test_is_there_space_for_new_guest(self):
+    def test_is_there_space_for_guest_True(self):
         self.room.space_for_guest()
         self.assertEqual(True, self.room.space_for_guest())
+
+    def test_is_there_space_for_guest_False(self):
+        self.room.maximum_occupants = 1
+        self.room.check_in_guest(self.guest)
+        self.room.space_for_guest()
+        self.assertEqual(False, self.room.space_for_guest())

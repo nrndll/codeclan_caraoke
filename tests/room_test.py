@@ -53,3 +53,6 @@ class TestRoom(unittest.TestCase):
         self.room.maximum_occupants = 1
         self.room.check_in_guest(self.guest)
         self.assertEqual("No space available, try another room.", self.room.check_in_guest(self.guest))
+
+    def test_room_has_entry_fee(self):
+        self.assertEqual(25.00, self.room.entry_fee)

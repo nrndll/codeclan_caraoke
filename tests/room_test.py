@@ -35,3 +35,10 @@ class TestRoom(unittest.TestCase):
         self.room.add_song(self.song)
         self.room.remove_song(self.song)
         self.assertEqual(0, len(self.room.songs))
+
+    def test_room_has_maximum_occupancy(self):
+        self.assertEqual(10, self.room.maximum_occupants)
+
+    def test_is_there_space_for_new_guest(self):
+        self.room.space_for_guest()
+        self.assertEqual(True, self.room.space_for_guest())

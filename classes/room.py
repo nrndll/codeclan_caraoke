@@ -3,6 +3,7 @@ class Room:
         self.name = name
         self.guests = []
         self.songs = []
+        self.maximum_occupants = 10
 
     def check_in_guest(self, guest):
         self.guests.append(guest)
@@ -15,3 +16,9 @@ class Room:
 
     def remove_song(self, song):
         self.songs.remove(song)
+
+    def space_for_guest(self):
+        if len(self.guests) < 10:
+            return True
+        else:
+            return False

@@ -7,7 +7,7 @@ class Room:
         self.songs = []
         self.maximum_occupants = maximum_occupants
         self.entry_fee = entry_fee
-        self.total_cash = 0
+        # self.total_cash = 0
 
     # def check_in_guest(self, guest):
     #     if self.space_for_guest():

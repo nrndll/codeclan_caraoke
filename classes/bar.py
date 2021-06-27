@@ -16,6 +16,7 @@ class Bar:
 
     def check_out_guest(self, room, guest):
         room.guests.remove(guest)
+        self.charge_guest_bar_tab(guest)
 
     def add_to_bar_tab(self, room, guest):
         guest.bar_tab += room.entry_fee
@@ -23,3 +24,4 @@ class Bar:
     def charge_guest_bar_tab(self, guest):
         guest.wallet -= guest.bar_tab
         self.total_cash += guest.bar_tab
+        guest.bar_tab = 0
